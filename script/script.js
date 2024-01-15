@@ -1,21 +1,26 @@
-function estação() { // sim é posivel usar acentuação
-    let mês = prompt('Digite o mês em extenso (ex: Setembro)')
+function estação() {
+    let mês = prompt('Digite o mês em extenso (ex: Junho)')
     let saída = document.querySelector('section#saida')
     let estação
-    switch (mês.toUpperCase()) { // O método toUpperCase() transforma todas as letas de uma string para maiusculas
-        case 'JANEIRO': case 'FEVEREIRO': case 'MARÇO': // Podemos testar múltiplos casos em uma mesma linha, desse jeito
-            estação = 'INVERNO'
-             break // Nunca se esqueça do break!!!
+    switch (mês.toUpperCase()) {
         case 'ABRIL': case 'MAIO': case 'JUNHO':
-            estação = 'PRIMAVERA'
-             break 
+            estação = 'OUTONO'
+            break
+
         case 'JULHO': case 'AGOSTO': case 'SETEMBRO':
-           estação = 'OUTONO'
-             break
-        default:
+            estação = 'INVERNO'
+            break
+
+        case 'OUTUBRO': case 'NOVEMBRO': case 'DEZEMBRO':
+            estação = 'PRIMAVERA'
+            break
+
+        case 'JANEIRO': case 'FEVEREIRO': case 'MARÇO':
+            estação = 'INVERNO'
+            break
+            default: 
             estação = 'INDEFINIDA'
-             break      
+            break
     }
-    saída.innerHTML = `<p>No mês de <mark>${mês}</mark>, estamos na estação <mark><strong>${estação}</strong></mark>.</p>`
+    saída.innerHTML = `<p>No mês de <strong><mark>${mês}</mark></strong>, estamos na estação <strong><mark>${estação}</mark></strong></p>`
 }
-// Sugestão de melhoria: refaça esse programa para que ele aceite tanto o mês por extenso quanto o número do mês.
